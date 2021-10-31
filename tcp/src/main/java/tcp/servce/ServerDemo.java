@@ -26,14 +26,13 @@ public class ServerDemo {
             ServerSocket server = new ServerSocket(PORT);//创建  ServerSocket类
             Socket socket = server.accept();// 等待客户连接
             try {
-                DataInputStream in = new DataInputStream(socket
-                        .getInputStream());// 读取客户端传过来信息的DataInputStream
-                DataOutputStream out = new DataOutputStream(socket
-                        .getOutputStream());// 向客户端发送信息的DataOutputStream
+                DataInputStream in = new DataInputStream(socket.getInputStream());// 读取客户端传过来信息的DataInputStream
+                DataOutputStream out = new DataOutputStream(socket.getOutputStream());// 向客户端发送信息的DataOutputStream
                 Scanner scanner = new Scanner(System.in);//从键盘接受数据
                 while (true) {
                     String accpet = in.readUTF();// 读取来自客户端的信息
                     System.out.println(accpet);//输出来自客户端的信息
+                    System.out.println("请回消息：");
                     String send = scanner.nextLine();//nextLine方式接受字符串
                     System.out.println("服务器：" + send);//输出提示信息
                     out.writeUTF("服务器：" + send);//把服务器端的输入发给客户端
