@@ -1,10 +1,9 @@
-package tcp.servce;
+package tcp.dataStream;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -14,7 +13,7 @@ import java.util.Scanner;
  * @ClassName tcp.servce.ServerDemo.java
  * @createTime 2021年10月31日 18:37:00
  */
-public class ServerDemo {
+public class Server {
     private static final  int PORT = 8088;
     /**
      * @方法描述：一个简单的tcp 服务端
@@ -45,8 +44,8 @@ public class ServerDemo {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         service();
     }
+
 }

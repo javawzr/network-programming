@@ -1,9 +1,8 @@
-package tcp.client;
+package tcp.dataStream;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
@@ -13,10 +12,14 @@ import java.util.Scanner;
  * @ClassName tcp.client.ClientDemo.java
  * @createTime 2021年10月31日 18:37:00
  */
-public class ClientDemo {
+public class Client {
     private static String host = "localhost";// 默认连接到本机
     private static int port = 8088;// 默认连接到端口8088
-
+/**
+ * @方法描述：DataInputStream ,DataOutputStream 实现的客户端
+ * @作者： wzr
+ * @创建时间： 23:00
+ */
     public static void chat() {//chat方法
         try {
             // 连接到服务器
@@ -43,7 +46,8 @@ public class ClientDemo {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         chat();
+
     }
 }
