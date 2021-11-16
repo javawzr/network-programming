@@ -1,4 +1,4 @@
-package tcp.byteStream;
+package tcp.bytestream;
 
 import java.io.*;
 import java.net.Socket;
